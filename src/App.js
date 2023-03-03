@@ -2,13 +2,23 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Home, Login, Public } from "./containers/public/index";
+import { Routes, Route } from "react-router-dom";
+import path from "./ultis/path";
 
 function App() {
   const { test, homeData } = useSelector((state) => state.app);
-  console.log("test", test);
-  console.log("homeData", homeData);
+
   return (
     <>
+      <div className="">
+        <Routes>
+          <Route path={path.PUBLIC} element={<Public />}>
+            <Route path={path.HOME} element={<Home />} />
+            <Route path={path.LOGIN} element={<Login />} />
+          </Route>
+        </Routes>
+      </div>
       <ToastContainer
         position="bottom-right"
         autoClose={5000}

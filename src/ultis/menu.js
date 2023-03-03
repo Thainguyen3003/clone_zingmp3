@@ -1,6 +1,12 @@
 import icons from "./icons";
 
-const { BsFileMusicFill, BsFileMusic } = icons;
+const {
+  BsMusicPlayer,
+  BsFileMusic,
+  SiYoutubemusic,
+  GiMusicSpell,
+  RiFolderMusicLine,
+} = icons;
 export const sidebarMenu = [
   {
     path: "my-music",
@@ -11,21 +17,21 @@ export const sidebarMenu = [
     path: "",
     text: "Khám phá",
     end: true,
-    icons: <BsFileMusic size={24} />,
+    icons: <SiYoutubemusic size={24} />,
   },
   {
     path: "zing-chart",
     text: "#zingchart",
-    icons: <BsFileMusic size={24} />,
+    icons: <GiMusicSpell size={24} />,
   },
   {
     path: "radio",
     text: "Radio",
-    icons: <BsFileMusic size={24} />,
+    icons: <BsMusicPlayer size={24} />,
   },
   {
     path: "follow",
     text: "Theo dõi",
-    icons: <BsFileMusic size={24} />,
+    icons: <RiFolderMusicLine size={24} />,
   },
 ];

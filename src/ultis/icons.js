@@ -1,8 +1,15 @@
-import { BsFileMusicFill, BsFileMusic } from "react-icons/bs";
+import { BsMusicPlayer, BsFileMusic, BsMusicPlayerFill } from "react-icons/bs";
+import { GiMusicSpell } from "react-icons/gi";
+import { SiYoutubemusic } from "react-icons/si";
+import { RiFolderMusicLine } from "react-icons/ri";
 
 const icons = {
-  BsFileMusicFill,
+  BsMusicPlayer,
   BsFileMusic,
+  BsMusicPlayerFill,
+  SiYoutubemusic,
+  GiMusicSpell,
+  RiFolderMusicLine,
 };
 
 export default icons;

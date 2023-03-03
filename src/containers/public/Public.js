@@ -3,7 +3,7 @@ import { SidebarLeft, SidebarRight } from "../../components";
 
 function Public() {
   return (
-    <div className="w-full flex overflow-y-auto">
+    <div className="w-full flex">
       <div className="w-[240px] flex-none border border-blue-500">
         <SidebarLeft />
       </div>

@@ -7,6 +7,7 @@ const {
   GiMusicSpell,
   RiFolderMusicLine,
 } = icons;
+
 export const sidebarMenu = [
   {
     path: "my-music",

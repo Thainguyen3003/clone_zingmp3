@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Home, Login, Public } from "./containers/public/index";
 import { Routes, Route } from "react-router-dom";
 import path from "./ultis/path";
+import * as actions from "./store/action";
 
 function App() {
-  const { test, homeData } = useSelector((state) => state.app);
-
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(actions.getHome());
+  }, []);
   return (
     <>
       <div className="">

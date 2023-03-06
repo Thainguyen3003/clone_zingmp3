@@ -19,6 +19,8 @@ const Slider = () => {
           : (sliderEls[i].style.cssText = "display: none");
       }
 
+      sliderEls[max].classList.add("animate-slide-right");
+
       if (min === sliderElsLength) {
         min = 0;
       } else {
@@ -29,7 +31,7 @@ const Slider = () => {
       } else {
         max += 1;
       }
-    }, 1000);
+    }, 2000);
 
     return () => {
       intervalId && clearInterval(intervalId);
@@ -38,11 +40,13 @@ const Slider = () => {
 
   return (
     <div className="flex gap-4 w-full overflow-hidden px-[59px] pt-8">
-      {banner?.map((item) => (
+      {banner?.map((item, index) => (
         <img
           key={item?.encodeId}
           src={item?.banner}
-          className="slider-item flex-1 object-contain w-1/3 rounded-lg"
+          className={`slider-item flex-1 object-contain w-1/3 rounded-lg ${
+            index <= 2 ? "block" : "hidden"
+          }`}
         />
       ))}
     </div>

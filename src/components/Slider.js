@@ -19,6 +19,11 @@ const Slider = () => {
           : (sliderEls[i].style.cssText = "display: none");
       }
 
+      list.forEach((item) => {
+        if (item === max) {
+          sliderEls[item].classList.add("animate-slide-right", "order-last");
+        }
+      });
       sliderEls[max].classList.add("animate-slide-right");
 
       if (min === sliderElsLength) {

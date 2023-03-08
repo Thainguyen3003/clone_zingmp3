@@ -14,29 +14,52 @@ const Slider = () => {
       const list = getArrSlider(min, max, sliderElsLength);
 
       for (let i = 0; i < sliderEls.length; i++) {
+        // Delete class
+        sliderEls[i].classList.remove(
+          "animate-slide-right",
+          "order-last",
+          "z-20"
+        );
+        sliderEls[i].classList.remove(
+          "animate-slide-left",
+          "order-first",
+          "z-10"
+        );
+        sliderEls[i].classList.remove("animate-slide-left2", "order-2", "z-10");
+
+        // Hide or show
         list.some((item) => item === i)
           ? (sliderEls[i].style.cssText = "display: block")
           : (sliderEls[i].style.cssText = "display: none");
       }
 
+      // Add animation by adding className
       list.forEach((item) => {
         if (item === max) {
-          sliderEls[item].classList.add("animate-slide-right", "order-last");
+          sliderEls[item].classList.add(
+            "animate-slide-right",
+            "order-last",
+            "z-20"
+          );
+        } else if (item === min) {
+          sliderEls[item].classList.add(
+            "animate-slide-left",
+            "order-first",
+            "z-10"
+          );
+        } else {
+          sliderEls[item].classList.add(
+            "animate-slide-left2",
+            "order-2",
+            "z-10"
+          );
         }
       });
       sliderEls[max].classList.add("animate-slide-right");
 
-      if (min === sliderElsLength) {
-        min = 0;
-      } else {
-        min += 1;
-      }
-      if (max === sliderElsLength) {
-        max = 0;
-      } else {
-        max += 1;
-      }
-    }, 2000);
+      min = min === sliderElsLength ? 0 : min + 1;
+      max = max === sliderElsLength ? 0 : max + 1;
+    }, 3000);
 
     return () => {
       intervalId && clearInterval(intervalId);
@@ -44,12 +67,12 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="flex gap-4 w-full overflow-hidden px-[59px] pt-8">
+    <div className="flex gap-8 w-full overflow-hidden px-[59px] pt-8">
       {banner?.map((item, index) => (
         <img
           key={item?.encodeId}
           src={item?.banner}
-          className={`slider-item flex-1 object-contain w-1/3 rounded-lg ${
+          className={`slider-item flex-1 object-contain w-[30%] rounded-lg ${
             index <= 2 ? "block" : "hidden"
           }`}
         />

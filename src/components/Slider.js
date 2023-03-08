@@ -36,19 +36,19 @@ const Slider = () => {
       // Add animation by adding className
       list.forEach((item) => {
         if (item === max) {
-          sliderEls[item].classList.add(
+          sliderEls[item]?.classList.add(
             "animate-slide-right",
             "order-last",
             "z-20"
           );
         } else if (item === min) {
-          sliderEls[item].classList.add(
+          sliderEls[item]?.classList.add(
             "animate-slide-left",
             "order-first",
             "z-10"
           );
         } else {
-          sliderEls[item].classList.add(
+          sliderEls[item]?.classList.add(
             "animate-slide-left2",
             "order-2",
             "z-10"

@@ -57,7 +57,7 @@ const Slider = () => {
           );
         }
       });
-      sliderEls[max].classList.add("animate-slide-right");
+      sliderEls[max]?.classList.add("animate-slide-right");
 
       min = min === sliderElsLength ? 0 : min + 1;
       max = max === sliderElsLength ? 0 : max + 1;
